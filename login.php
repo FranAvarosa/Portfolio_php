@@ -65,15 +65,15 @@ require_once "config/connect.php" ;
                 <div class="corpus">
                     <h1 class="mt-5 mb-5 connexion">Connexion</h1>
                     <h2 class="mt-5 mb-5 login">Veuillez entrer votre nom d'utilisateur et votre mot de passe pour vous connecter.</h2>
-                    <form action="/ma-page-de-traitement" method="post">
+                    <form action="login.php" method="post">
                         <hr class="ligne"/>
                         <div class="mb-3 mt-5">
                             <label for="name">Nom d'utilisateur</label><br />
-                            <input type="text" id="name" name="user_name" required>
+                            <input type="text" id="name" name="user_name">
                         </div>
                         <div class="mt-2 mb-5">
                             <label for="password">Mot de passe</label><br />
-                            <input type="password" id="password" name="user_password" required>
+                            <input type="password" id="password" name="user_password">
                         </div>
                         <hr class="ligne"/>
                         <div class="mt-5 mb-2">
