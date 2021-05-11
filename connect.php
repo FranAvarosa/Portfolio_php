@@ -1,12 +1,13 @@
 <?php
 
-$host = 'localhost';
+/*$host = 'localhost';
 $name = "root";
 $password = '';
-$dbname = 'portfolio';
+$dbname = 'portfolio';*/
 
+require_once "db.php";
 //Connection mysqli
-$mysqli = mysqli_connect($host, $name, $password, $dbname);
+$mysqli = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 
 //Verification de connection pour les erreurs
