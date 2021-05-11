@@ -1,13 +1,13 @@
 <?php
 
-require_once "connect.php" ;
+require_once "config/connect.php" ;
 
 ?>
 
 
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
