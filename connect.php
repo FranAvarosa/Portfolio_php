@@ -1,9 +1,5 @@
 <?php
 
-/*$host = 'localhost';
-$name = "root";
-$password = '';
-$dbname = 'portfolio';*/
 
 require_once "db.php";
 //Connection mysqli
