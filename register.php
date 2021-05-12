@@ -68,7 +68,7 @@ require_once "form/registerForm.php";
                     //echo '<p class="error">'.$error.'</p>';
                     if(is_array($error)){
                         foreach ($error as $values){
-                            echo $values.'<br>';
+                            echo $values.'<br><br>';
                         }
                     }
                 }

@@ -30,7 +30,6 @@ require_once "form/loginForm.php";
         unset($_SESSION['msg_flash']);
         $_SESSION['msg_flash'] = null;
     }
-
     ?>
     <!--HEADER-->
     <header>
@@ -73,6 +72,11 @@ require_once "form/loginForm.php";
             <div class="my-5 d-flex justify-content-center">
                 <div class="corpus">
                     <h1 class="mt-5 mb-5 connexion">Connexion</h1>
+                    <?php
+                    if ($error !== null && !empty($error)){
+                        echo '<p class="error">'.$error.'</p>';
+                    }
+                    ?>
                     <h2 class="mt-5 mb-5 login">Veuillez entrer votre nom d'utilisateur et votre mot de passe pour vous connecter.</h2>
                     <form method="post">
                         <hr class="ligne"/>
