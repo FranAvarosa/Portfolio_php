@@ -1,3 +1,8 @@
+<?php
+require_once "config/configuration.php";
+require_once "config/connect.php";
+require_once "form/loginForm.php";
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -12,6 +17,13 @@
     <title>Mon portfolio</title>
   </head>
 <body>
+    <?php
+    if(isset($_SESSION['msg_flash']) && !empty($_SESSION['msg_flash'])){
+        echo '<div class="alert alert-success">'.$_SESSION['msg_flash'].'</div>';
+        unset($_SESSION['msg_flash']);
+        $_SESSION['msg_flash'] = null;
+    }
+    ?>
     <!--HEADER-->
     <header>
         <div id="site-header"></div>
@@ -30,12 +42,23 @@
                     <li class="nav-item">
                         <a class="mx-5 nav-link" href="competences.php">Compétences</a>
                     </li>
+                    <?php
+                    if(!isset($_SESSION['user'])){
+                    echo '
                     <li class="nav-item">
                         <a class="mx-5 nav-link" href="login.php">Connexion<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link" href="register.php">S'enregistrer<span class="sr-only"></span></a>
-                    </li>
+                        <a class="mx-5 nav-link" href="register.php">S\'enregistrer<span class="sr-only"></span></a>
+                    </li>';
+                    }
+                    else{
+                        echo '
+                    <li class="nav-item">
+                        <a class="mx-5 nav-link" href="deconnexion.php">Déconnexion<span class="sr-only"></span></a>
+                    </li>';
+                    }   
+                    ?>
                     <li class="nav-item">
                         <a class="mx-5 nav-link" href="contact.php">Contact</a>
                     </li>

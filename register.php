@@ -1,9 +1,7 @@
 <?php
-
-require_once "config/connect.php" ;
 require_once "config/configuration.php";
-require_once "form/registerform.php";
-
+require_once "config/connect.php" ;
+require_once "form/registerForm.php";
 ?>
 
 <!DOCTYPE html>
@@ -68,33 +66,38 @@ require_once "form/registerform.php";
                 <?php
                 if ($error !== null && !empty($error)){
                     //echo '<p class="error">'.$error.'</p>';
+                    if(is_array($error)){
+                        foreach ($error as $values){
+                            echo $values.'<br>';
+                        }
+                    }
                 }
 
                 ?>
-                <form action="form/registerForm.php" method="post">
+                <form method="post">
                     <hr class="ligne" />
                     <div class="mb-4 mt-5">
                         <label for="name">Nom d'utilisateur</label><br />
-                        <input type="text" id="name" name="user_name" required>
+                        <input type="text" id="name" name="user_name" >
                     </div>
                     <hr class="ligne" />
                     <div class="mt-4 mb-3">
                         <label for="email">Adresse e-mail</label><br />
-                        <input type="email" id="email" name="user_email" required>
+                        <input type="email" id="email" name="user_email" >
                     </div>
                     <div class="mt-3 mb-4">
                         <label for="confirm_email">Confirmez votre adresse e-mail</label><br />
-                        <input type="email" id="confirm_email" name="confirm_user_email" required>
+                        <input type="email" id="confirm_email" name="confirm_user_email" >
                     </div>
                     <hr class="ligne" />
                     <div class="mt-4 mb-3">
                         <label for="password">Mot de passe</label><br />
-                        <input type="password" id="password" name="user_password" required>
+                        <input type="password" id="password" name="user_password" >
                     </div>
 
                     <div class="mt-3 mb-5">
                         <label for="confirm_password">Confirmez votre mot de passe</label><br />
-                        <input type="password" id="confirm_password" name="confirm_user_password" required>
+                        <input type="password" id="confirm_password" name="confirm_user_password" >
                     </div>
                     <hr class="ligne" />
                     <div class="my-5">

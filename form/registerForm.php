@@ -1,4 +1,5 @@
 <?php
+
 /*if (isset($_POST['user_name']) && isset($_POST['user_email']) && isset($_POST['user_password'])){
     echo "<br> Bonjour ". $_POST['user_name']. "<br> Ton mot de passe apres le hashage est : ". password_hash($_POST['user_password'], PASSWORD_DEFAULT)."<br> et ton email est :". $_POST['user_email'];
 }
@@ -33,8 +34,8 @@ if (isset($_POST) && !empty($_POST)){
     if (empty($_POST['user_password']) or empty($_POST['confirm_user_password']) or $_POST['user_password'] !== $_POST['confirm_user_password']){
         $error['password'] = "mot de passe ne correspond pas à la confirmation";
     }
-    if (strlen($_POST['user_password']) < 8 or strlen($_POST['user_name']) > 30){
-        $error['username'] = "Votre pseudo doit etre de au moins 8 caractere et pas plus que 30";
+    if (strlen($_POST['user_password']) < 4 or strlen($_POST['user_name']) > 30){
+        $error['username'] = "Votre mot de passe doit etre de au moins 4 caractere et pas plus que 30";
     }
     if (strlen($_POST['user_name']) < 3 or strlen($_POST['user_name']) > 30){
         $error['username'] = "Votre pseudo doit etre de au moins 3 caractere et pas plus que 30";
@@ -51,14 +52,28 @@ if (isset($_POST) && !empty($_POST)){
         $password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
         $email = $_POST['user_email'];
 
-        $sql = "INSERT INTO users(email,password,pseudo)";
+        $sql = "INSERT INTO user(email,password,pseudo) VALUES ('$email','$password','$pseudo')";
 
         if($mysqli->query($sql) === true){
+            $_SESSION['msg_flash'] = 'Votre compte à été créer avec succès !!';
+            header('location: login.php');
+        }
+        else {
+            $error = 'Une erreur est survenue, compte non créer !!';
+        }
+
+
+        // TEST PROCEDURAL
+        
+        /*if(mysqli_query($mysqli, $sql === TRUE)){
             $_SESSION['msg_flash'] = '<p><script type="text/javascript">alert("Votre compte à été créer avec succès !")</script></p>';
             header('location: login.php');
         }
-    }
+        else {
+            $error = 'Une erreur est survenue, compte non créer !!';
+        }*/
 
+    }
 }
 
 

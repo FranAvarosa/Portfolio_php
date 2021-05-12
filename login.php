@@ -1,7 +1,7 @@
 <?php
 
 require_once "config/connect.php" ;
-//require_once "config/configuration.php"; (pour ajouter le futur session_start(); )
+require_once "config/configuration.php";
 require_once "form/loginForm.php";
 
 ?>
@@ -74,7 +74,7 @@ require_once "form/loginForm.php";
                 <div class="corpus">
                     <h1 class="mt-5 mb-5 connexion">Connexion</h1>
                     <h2 class="mt-5 mb-5 login">Veuillez entrer votre nom d'utilisateur et votre mot de passe pour vous connecter.</h2>
-                    <form action="login.php" method="post">
+                    <form method="post">
                         <hr class="ligne"/>
                         <div class="mb-3 mt-5">
                             <label for="name">Nom d'utilisateur</label><br />
