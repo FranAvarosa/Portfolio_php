@@ -1,6 +1,8 @@
 <?php
 
 require_once "config/connect.php" ;
+require_once "config/configuration.php";
+require_once "form/loginForm.php";
 
 ?>
 
