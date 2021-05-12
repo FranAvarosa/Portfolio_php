@@ -1,7 +1,7 @@
 <?php
 
 require_once "config/connect.php" ;
-require_once "config/configuration.php";
+//require_once "config/configuration.php"; (pour ajouter le futur session_start(); )
 require_once "form/loginForm.php";
 
 ?>
@@ -24,7 +24,14 @@ require_once "form/loginForm.php";
 </head>
 
 <body>
+    <?php
+    if(isset($_SESSION['msg_flash']) && !empty($_SESSION['msg_flash'])){
+        echo '<div class="alert alert-success">'.$_SESSION['msg_flash'].'</div>';
+        unset($_SESSION['msg_flash']);
+        $_SESSION['msg_flash'] = null;
+    }
 
+    ?>
     <!--HEADER-->
     <header>
         <div id="site-header"></div>

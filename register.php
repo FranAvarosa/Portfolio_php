@@ -1,3 +1,11 @@
+<?php
+
+require_once "config/connect.php" ;
+require_once "config/configuration.php";
+require_once "form/registerform.php";
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -57,7 +65,13 @@
         <div class="my-5 d-flex justify-content-center corps">
             <div class="corpus">
                 <h1 class="my-5 enregistrement">S'enregistrer</h1>
-                <form action="/ma-page-de-traitement" method="post">
+                <?php
+                if ($error !== null && !empty($error)){
+                    //echo '<p class="error">'.$error.'</p>';
+                }
+
+                ?>
+                <form action="form/registerForm.php" method="post">
                     <hr class="ligne" />
                     <div class="mb-4 mt-5">
                         <label for="name">Nom d'utilisateur</label><br />

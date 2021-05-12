@@ -25,22 +25,22 @@
                         <a class="mx-5 nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link" href="portfolio.html">Portfolio</a>
+                        <a class="mx-5 nav-link" href="portfolio.php">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link" href="competences.html">Compétences</a>
+                        <a class="mx-5 nav-link" href="competences.php">Compétences</a>
                     </li>
                     <li class="nav-item">
                         <a class="mx-5 nav-link" href="login.php">Connexion<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link" href="register.html">S'enregistrer<span class="sr-only"></span></a>
+                        <a class="mx-5 nav-link" href="register.php">S'enregistrer<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link" href="contact.html">Contact</a>
+                        <a class="mx-5 nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mx-5 nav-link " href="about.html">À propos</a>
+                        <a class="mx-5 nav-link " href="about.php">À propos</a>
                     </li>
                 </ul>
             </div>
