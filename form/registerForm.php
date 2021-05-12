@@ -27,7 +27,7 @@ if (isset($_POST) && !empty($_POST)){
     /*echo "<br> Bonjour ". $_POST['user_name']. "<br> Ton mot de passe apres le hashage est : ". password_hash($_POST['user_password'], PASSWORD_DEFAULT)."<br> et ton email est :". $_POST['user_email'];
     echo "<br><br>";
     var_dump($_POST);*/
-    if (empty($_POST['user_email']) or empty($_POST['confirm_user_email']) or $_POST['user_email'] !== $_POST['confirm_user_email'] or filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL == FALSE)){
+    if (empty($_POST['user_email']) or empty($_POST['confirm_user_email']) or $_POST['user_email'] !== $_POST['confirm_user_email'] or filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL === FALSE)){
         $error['email'] = "Votre email comporte une erreur ou ne correspond pas à la confirmation";
     }
     if (empty($_POST['user_password']) or empty($_POST['confirm_user_password']) or $_POST['user_password'] !== $_POST['confirm_user_password']){
