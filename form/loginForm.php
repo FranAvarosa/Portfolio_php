@@ -25,7 +25,8 @@ if (isset($_POST) && !empty($_POST)){
     if ($result->num_rows > 0){
       $user = $result->fetch_assoc();
       if (password_verify($_POST['user_password'], $user['password'])){
-        $_SESSION['msg_flash'] = 'Bienvenue !'. $_user['pseudo'];
+        $_SESSION['msg_flash'] = 'Bienvenue '. $user['pseudo'].' !';
+        $_SESSION['user'] = $user;
         redirect('index.php');
       }
       else{
@@ -33,8 +34,5 @@ if (isset($_POST) && !empty($_POST)){
       }
     }
   }
-  
-  
-
 }
 ?>

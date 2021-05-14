@@ -131,13 +131,13 @@ require_once "form/loginForm.php";
     <footer id="colophon" class="site-footer">
         <div class="footer-basic">
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="index.html">Accueil</a></li>
-            <li class="list-inline-item"><a href="portfolio.html">Portfolio</a></li>
-            <li class="list-inline-item"><a href="competences.html">Compétences</a></li>
-            <li class="list-inline-item"><a href="login.html">Connexion</a></li>
-            <li class="list-inline-item"><a href="register.html">S'enregistrer</a></li>
-            <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-            <li class="list-inline-item"><a href="about.html">A propos</a></li>
+            <li class="list-inline-item"><a href="index.php">Accueil</a></li>
+            <li class="list-inline-item"><a href="portfolio.php">Portfolio</a></li>
+            <li class="list-inline-item"><a href="competences.php">Compétences</a></li>
+            <li class="list-inline-item"><a href="login.php">Connexion</a></li>
+            <li class="list-inline-item"><a href="register.php">S'enregistrer</a></li>
+            <li class="list-inline-item"><a href="contact.php">Contact</a></li>
+            <li class="list-inline-item"><a href="about.php">A propos</a></li>
         </ul>
     </div>
 
@@ -174,6 +174,9 @@ require_once "form/loginForm.php";
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        $('.alert').delay(8000).fadeOut(2000);
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
