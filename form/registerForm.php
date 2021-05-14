@@ -34,26 +34,27 @@ if (isset($_POST) && !empty($_POST)){
     if (empty($_POST['user_password']) or empty($_POST['confirm_user_password']) or $_POST['user_password'] !== $_POST['confirm_user_password']){
         $error['password'] = "mot de passe ne correspond pas à la confirmation";
     }
-    if (strlen($_POST['user_password']) < 4 or strlen($_POST['user_name']) > 30){
+    if (strlen($_POST['user_password']) < 4 or strlen($_POST['user_password']) > 30){
         $error['username'] = "Votre mot de passe doit etre de au moins 4 caractere et pas plus que 30";
     }
     if (strlen($_POST['user_name']) < 3 or strlen($_POST['user_name']) > 30){
         $error['username'] = "Votre pseudo doit etre de au moins 3 caractere et pas plus que 30";
     }
 
-    /*
-    version compliquer pour donner des conditions au pseudo 
-    if(preg_match("\^[a-zA-Z0-9_-]{3-30}$\ "), $matches, $_POST['user_name']){
+    
+    //version compliquer pour donner des conditions au pseudo 
+    if (!preg_match('#^[a-zA-Z0-9_-]{3,30}+$#', $_POST['user_name'])){
         $error['username'] = "Votre pseudo dois etre compris entre 3 et 30 caractere seul les lettres minuscules et majuscules, les chiffres de 0 à 9 et les tirets et underscore sont accepter";
-    }*/
+    }
 
     if(empty($error)){
-        //on peut mettre ces 3 lignes directement dans le $sql et economiser de la place
+        //on peut mettre ces 4 lignes directement dans le $sql et economiser de la place
         $pseudo = $_POST['user_name'];
         $password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
         $email = $_POST['user_email'];
+        $roles = json_encode(['user']);
 
-        $sql = "INSERT INTO user(email,password,pseudo) VALUES ('$email','$password','$pseudo')";
+        $sql = "INSERT INTO users(email,password,pseudo,roles) VALUES ('$email','$password','$pseudo','$roles')";
         // on pourrait meme mettre la requete sql avec ET en remplaçant les $email $password $pseudo pour gagner encore plus de place on effacerait les 4 lignes au dessus
         if($mysqli->query($sql) === true){
             $_SESSION['msg_flash'] = 'Votre compte à été créer avec succès !!';

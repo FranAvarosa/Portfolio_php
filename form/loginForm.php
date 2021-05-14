@@ -16,7 +16,7 @@ if (isset($_POST) && !empty($_POST)){
     $error = "Aucun mot de passe ou pseudo rentrer";
   }
 
-  $sql = 'SELECT * FROM user WHERE pseudo ="'.$_POST['user_name'].'" LIMIT 1';
+  $sql = 'SELECT * FROM users WHERE pseudo ="'.$_POST['user_name'].'" LIMIT 1';
   //$result = $mysqli->query($sql);
   //var_dump($result);
 
@@ -26,7 +26,7 @@ if (isset($_POST) && !empty($_POST)){
       $user = $result->fetch_assoc();
       if (password_verify($_POST['user_password'], $user['password'])){
         $_SESSION['msg_flash'] = 'Bienvenue '. $user['pseudo'].' !';
-        $_SESSION['user'] = $user;
+        $_SESSION['users'] = $user;
         redirect('index.php');
       }
       else{

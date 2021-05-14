@@ -57,8 +57,6 @@ require_once "form/registerForm.php";
     </nav>
 </header>
 <!--FIN HEADER-->
-<!--BODY-->
-<main>
     <section class="container register">
         <div class="my-5 d-flex justify-content-center corps">
             <div class="corpus">
@@ -74,7 +72,6 @@ require_once "form/registerForm.php";
                     }
                 }
                 echo '</p>';
-
                 ?>
                 <form method="post">
                     <hr class="ligne" />
@@ -109,8 +106,6 @@ require_once "form/registerForm.php";
             </div>
         </div>
     </section>
-</main>
-<!--FIN BODY-->
 <!--Debut Footer-->
 <footer id="colophon" class="site-footer">
   <div class="footer-basic">

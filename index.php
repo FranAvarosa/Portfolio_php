@@ -43,7 +43,7 @@ require_once "form/loginForm.php";
                         <a class="mx-5 nav-link" href="competences.php">Compétences</a>
                     </li>
                     <?php
-                    if(!isset($_SESSION['user'])){
+                    if(!isset($_SESSION['users'])){
                     echo '
                     <li class="nav-item">
                         <a class="mx-5 nav-link" href="login.php">Connexion<span class="sr-only"></span></a>
@@ -174,11 +174,11 @@ require_once "form/loginForm.php";
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $('.alert').delay(8000).fadeOut(2000);
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

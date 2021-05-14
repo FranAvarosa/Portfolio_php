@@ -4,12 +4,12 @@ session_start();
 
 function deconnexion(){
     session_destroy();
-    header('location: index.php');
+    header('Location: index.php');
     exit();
 }
 
 function redirect(string $target){
-    header('location:'. $target);
+    header('Location:'. $target);
     exit();
 }
 
