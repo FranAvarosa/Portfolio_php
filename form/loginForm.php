@@ -26,7 +26,7 @@ if (isset($_POST) && !empty($_POST)){
       $user = $result->fetch_assoc();
       if (password_verify($_POST['user_password'], $user['password'])){
         $_SESSION['msg_flash'] = 'Bienvenue !'. $_user['pseudo'];
-        header('Location: index.php');
+        redirect('index.php');
       }
       else{
         $error = "Mot de passe ou pseudo incorrecte";

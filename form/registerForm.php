@@ -48,15 +48,16 @@ if (isset($_POST) && !empty($_POST)){
     }*/
 
     if(empty($error)){
+        //on peut mettre ces 3 lignes directement dans le $sql et economiser de la place
         $pseudo = $_POST['user_name'];
         $password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
         $email = $_POST['user_email'];
 
         $sql = "INSERT INTO user(email,password,pseudo) VALUES ('$email','$password','$pseudo')";
-
+        // on pourrait meme mettre la requete sql avec ET en remplaçant les $email $password $pseudo pour gagner encore plus de place on effacerait les 4 lignes au dessus
         if($mysqli->query($sql) === true){
             $_SESSION['msg_flash'] = 'Votre compte à été créer avec succès !!';
-            header('location: login.php');
+            redirect('login.php');
         }
         else {
             $error = 'Une erreur est survenue, compte non créer !!';

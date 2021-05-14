@@ -64,6 +64,7 @@ require_once "form/registerForm.php";
             <div class="corpus">
                 <h1 class="my-5 enregistrement">S'enregistrer</h1>
                 <?php
+                echo '<p class="error">';
                 if ($error !== null && !empty($error)){
                     //echo '<p class="error">'.$error.'</p>';
                     if(is_array($error)){
@@ -72,6 +73,7 @@ require_once "form/registerForm.php";
                         }
                     }
                 }
+                echo '</p>';
 
                 ?>
                 <form method="post">
