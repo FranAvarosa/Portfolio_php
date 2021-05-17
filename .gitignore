@@ -1,1 +1,4 @@
 /vendor
+/faker
+/composer.json
+/composer.lock
